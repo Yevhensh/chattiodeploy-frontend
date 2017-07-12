@@ -1,0 +1,21 @@
+<div class="dialog-container">
+  <h3 class="purple-special">Choose new user to add to dialog</h3>
+  <h4 md-line id="dialog-legend">
+    <span class="user-fixed"><i>Fullname</i></span>
+    <span class="user-fixed"><i>username</i></span>
+  </h4>
+  <div class="users-container">
+    <span *ngFor="let user of users">
+      <h4 md-line>
+        <span class="user-fixed special">
+          {{user.fullName}}
+        </span>
+        <span class="user-fixed special">
+          {{user.email}}
+        </span>
+        <button md-fab class="create-button" (click)="createDialog(user.email)">ADD</button>
+      </h4>
+    </span>
+  </div>
+  <button id="dialog-close-button" md-raised-button (click)="closeDialog()">Close</button>
+</div>

@@ -1,0 +1,38 @@
+.dialog-container {
+  min-width: 400px;
+  width: 600px;
+  max-width: 800px;
+}
+
+#dialog-legend {
+  margin-top: 40px;
+}
+.special {
+  color: #607D8B;
+}
+
+#dialog-close-button {
+  display: block;
+  text-align: center;
+  margin: 30px auto 0;
+}
+
+.create-button {
+  background-color: #80CBC4 !important;
+  font-size: 6pt;
+  width: 40px;
+  height: 40px;
+  float: right;
+}
+
+.purple-special {
+  color: #673AB7;
+}
+
+.user-fixed {
+  display: inline-block;
+  line-height: 40px;
+  min-width: 140px;
+  width: 140px;
+  margin-left: 20px !important;
+}

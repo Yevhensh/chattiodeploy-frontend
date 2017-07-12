@@ -1,0 +1,26 @@
+<md-card>
+  <div id="dialog-info">
+  <h3 md-subheader>Dialogs</h3>
+  <button md-raised-button id="create-dialog-button" (click)="openUsersModal()">Create dialog</button>
+  </div>
+  <md-list-item>
+    <h4 md-line><span class="user-fixed"><i>Name</i></span><span class="user-fixed"><i>users in dialog</i></span></h4>
+  </md-list-item>
+  <md-divider></md-divider>
+  <md-list-item *ngFor="let dialog of dialogs">
+    <h4 md-line>
+      <span class="special user-fixed" *ngIf="dialog.dialogName">
+        {{dialog.dialogName}}
+      </span>
+      <span class="special user-fixed" *ngIf="!dialog.dialogName">
+        {{ "No name specified" }}
+      </span>
+      <span class="special user-fixed">
+        <span *ngFor="let user of dialog.dialogUsers" class="user-emails">
+          <span *ngIf="!isMe(user)" class="user-emails">{{user.email}}</span>
+        </span>
+      </span>
+      <button md-fab class="chat-button" routerLink="{{dialog.id}}">CHAT</button>
+    </h4>
+  </md-list-item>
+</md-card>

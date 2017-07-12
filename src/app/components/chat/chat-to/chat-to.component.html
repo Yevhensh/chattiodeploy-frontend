@@ -1,0 +1,31 @@
+<md-card>
+  <h3>Dialog with:
+    <span id="dialog-speaker" *ngFor="let user of users; count as count; index as i">
+      <span>{{user.fullName}}</span>
+      <span *ngIf="i != users.length-1">|</span>
+    </span>
+  </h3>
+  <button id="add-user-to-dialog" md-button (click)="addUserToDialogModal()">Add User</button>
+  <div #scrollBot id="dialog-messages-container">
+    <div class="message-container-wrapper" *ngFor="let message of messages">
+      <div class="message-container left-message" *ngIf="!isMyMessage(message)">
+        <p class="message-value">{{ message.value }}</p>
+        <div class="message-info">
+          <div class="message-attribute"> {{ message.user.fullName }}</div>
+          <div class="message-attribute"> {{ message.dateTime | date: 'short' }}</div>
+        </div>
+      </div>
+      <div class="message-container right-message" *ngIf="isMyMessage(message)">
+        <p class="message-value">{{ message.value }}</p>
+        <div class="message-info">
+          <div class="message-attribute"> you</div>
+          <div class="message-attribute"> {{ message.dateTime | date: 'short' }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <md-input-container>
+    <input mdInput name="sendMessage" type="text" required (keyup.enter)="handleSend()" [(ngModel)]="sendMessage">
+  </md-input-container>
+  <button md-raised-button (click)="handleSend()">Send</button>
+</md-card>

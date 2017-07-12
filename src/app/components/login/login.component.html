@@ -1,0 +1,16 @@
+<md-card>
+  <form (submit)="login($event)" #loginForm="ngForm">
+    <md-toolbar>Login page</md-toolbar>
+    <md-input-container id="username-input">
+      <input mdInput placeholder="Username" [(ngModel)]="username" name="username" required>
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Password" [(ngModel)]="password" name="password" type="password" required>
+    </md-input-container>
+    <p id="errorMessage">{{errorMessage}}</p>
+    <button type="submit" md-button>Login</button>
+    <h5 class="text-center">
+      Not registeret yet? <span id="register-text" routerLink="../register">Register now!</span>
+    </h5>
+  </form>
+</md-card>

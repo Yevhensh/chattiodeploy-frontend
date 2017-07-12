@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  font-family: 'Noto Serif', serif;
+}
+
+md-toolbar {
+  background-color: #80CBC4 !important;
+  color: #ffffff !important;
+}
+
+button {
+  background-color: transparent;
+}
+
+.wrapper {
+  display: block;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 40px;
+}

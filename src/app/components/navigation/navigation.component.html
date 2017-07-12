@@ -1,0 +1,10 @@
+<md-toolbar class="navigation">
+  <button md-button id="login" routerLink="login" *ngIf="!userLoggedIn()">Login</button>
+  <button md-button routerLink="register" *ngIf="!userLoggedIn()">Register</button>
+  <button md-button routerLink="chat" *ngIf="userLoggedIn()">Chat</button>
+  <button md-button routerLink="" *ngIf="userLoggedIn()">Home</button>
+  <button md-button class="special" *ngIf="userLoggedIn()" (click)="logout()"><b>Logout</b></button>
+  <span class="spacer"></span>
+  <span class="rightNav" *ngIf="!userLoggedIn()" routerLink="">ChattioApp</span>
+  <span class="rightNav" *ngIf="userLoggedIn()" class="special-color" routerLink="profile">{{username}}</span>
+</md-toolbar>
