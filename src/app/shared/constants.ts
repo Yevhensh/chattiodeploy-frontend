@@ -1,5 +1,5 @@
 export class Constants {
-  public static SERVER_URL: string = "https://chattio-app.herokuapp.com/";
+  public static SERVER_URL: string = "http://chattio-app.herokuapp.com/";
   public static SERVER_WS: string = "ws://chattio-app.herokuapp.com";
 
   public static AUTH_TOKEN: string = "oauthtoken";
