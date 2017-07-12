@@ -9,6 +9,7 @@ const app = express();
 const forceSSL = function() {
   return function (req, res, next) {
     if (req.headers['x-forwarded-proto'] == 'https') {
+      console.log("!!!!!!!!!!!!!!------HEY- WHATSUP");
       return res.redirect(['http://', req.get('Host'), req.url].join(''));
     }
     next();
