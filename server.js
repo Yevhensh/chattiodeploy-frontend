@@ -1,13 +1,14 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-
+console.log("----YES-----");
 // If an incoming request uses
 // a protocol other than HTTPS,
 // redirect that request to the
 // same url but with HTTPS
 const forceSSL = function() {
   return function (req, res, next) {
+    console.log("HELLO");
     if (req.headers['x-forwarded-proto'] == 'https') {
       console.log("!!!!!!!!!!!!!!------HEY- WHATSUP");
       return res.redirect(['http://', req.get('Host'), req.url].join(''));
