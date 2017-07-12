@@ -6,21 +6,16 @@ console.log("----YES-----");
 // a protocol other than HTTPS,
 // redirect that request to the
 // same url but with HTTPS
-const forceSSL = function() {
-  return function (req, res, next) {
-    console.log("HELLO");
-    if (req.headers['x-forwarded-proto'] == 'https') {
-      console.log("!!!!!!!!!!!!!!------HEY- WHATSUP");
-      return res.redirect(['http://', req.get('Host'), req.url].join(''));
-    }
-    next();
-  }
-}
 
-// Instruct the app
-// to use the forceSSL
-// middleware
-app.use(forceSSL());
+
+app.use(function(req, res, next) {
+  if (req.headers["x-forwarded-proto"] === "http"){
+    return next();
+  }
+  res.redirect("http://" + req.headers.host + req.url);
+
+});
+
 
 // Run the app by serving the static files
 // in the dist directory
