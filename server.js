@@ -7,9 +7,10 @@ console.log("----YES-----");
 // redirect that request to the
 // same url but with HTTPS
 
+app.enable('trust proxy');
 
 app.use(function(req, res, next) {
-  if (req.headers["x-forwarded-proto"] === "http"){
+  if (req.headers["x-forwarded-proto"] === "http" || !req.secure){
     return next();
   }
   res.redirect("http://" + req.headers.host + req.url);
