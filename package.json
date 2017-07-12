@@ -5,12 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "start": "node server.js",
-    "lint": "tslint \"src/**/*.ts\"",
-    "test": "ng test",
-    "pree2e": "webdriver-manager update",
-    "e2e": "protractor",
-    "postinstall": "ng build --aot -prod",
-    "deploy": "git push origin master && git push heroku master"
+    "lint": "tslint \"src/**/*.ts\""
   },
   "engines": {
     "node": "6.10.2"
