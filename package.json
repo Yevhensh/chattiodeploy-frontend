@@ -43,13 +43,13 @@
     "stompjs": "^2.3.3",
     "ts-helpers": "^1.1.1",
     "typescript": "2.4.0",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "angular-cli": "1.0.0-beta.28.3",
+    "@angular/compiler-cli": "^2.4.10"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^2.4.10",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.28.3",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "2.0.0-beta.5",
     "file-loader": "^0.9.0",
